@@ -6,9 +6,26 @@
     <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
 </head>
 <body>
-    <div id="t">
-
-    </div>
+    <ol id="t">
+       <li data-value="1"></li>
+       <li>
+           <ol>
+               <li>21</li>
+               <li>
+                   <ol>
+                       <li>221</li>
+                       <li>222</li>
+                       <li>223</li>
+                   </ol>
+               </li>
+               <li>23</li>
+           </ol>
+       </li>
+       <li>3</li>
+    </ol>
 </body>
 <script type="text/javascript" src="htmlToJson.js"></script>
+<script type="text/javascript">
+    console.log(h2j($('#t')));
+</script>
 </html>
