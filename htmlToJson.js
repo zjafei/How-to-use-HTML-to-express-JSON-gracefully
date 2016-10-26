@@ -38,7 +38,7 @@ function h2j($dom) {
             if (value.length === 1) {
                 o[i] = h2j(value);
             } else {
-                o[i] = $e.attr('data-value') || $e.text();
+                o[i] = $e.attr('data-value') || $e.text();//有 data-value 就忽略 text
             }
         });
     } else {
