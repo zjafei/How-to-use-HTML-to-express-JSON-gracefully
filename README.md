@@ -30,7 +30,7 @@
 
 	<h1 key-name="title">你好</h1>
 
-*具体用什么标签主要看值是对seo的权重*
+*具体用什么标签主要看值对seo的权重*
 
 ##几个特殊的键值对 link、img、video等一些有 src 属性的标签
 ### img 键值对表示图片
@@ -43,7 +43,7 @@
 
 >html
 
-	<img src='/1.jpg'/>
+	<img src='/1.jpg' alt="图片名称"/>
 		
 ### video 键值对表示图片
 > json
@@ -262,3 +262,5 @@
             </ol>
         </li>
     </ol>
+
+    
