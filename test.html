@@ -6,7 +6,7 @@
     <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
 </head>
 <body>
-    <ol id="t">
+    <ol id="t" data-ok=0>
        <li data-value="1"></li>
        <li>
            <ol>
@@ -26,6 +26,11 @@
 </body>
 <script type="text/javascript" src="htmlToJson.js"></script>
 <script type="text/javascript">
-    console.log(h2j($('#t')));
+    //console.log(h2j($('#t')));
+    //console.log($('#t'));
+    var t = $('#t')[0];
+    for(var i =0;i < t.attributes.length;i++){
+        console.log(t.attributes[i].name)
+    }
 </script>
 </html>
