@@ -43,6 +43,7 @@ function h2j($dom) {
         });
     } else {
         o = {};
+
         $child.each(function (i, e) {
             var $e = $(e);
             //todo 查找每一个 data-xxx 和 子元素的 key-name
