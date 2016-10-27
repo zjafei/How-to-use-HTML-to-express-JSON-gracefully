@@ -6,31 +6,22 @@
     <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
 </head>
 <body>
-    <ol id="t" data-ok=0>
-       <li data-value="1"></li>
-       <li>
-           <ol>
-               <li>21</li>
-               <li>
-                   <ol>
-                       <li>221</li>
-                       <li data-value="222"></li>
-                       <li>223</li>
-                   </ol>
-               </li>
-               <li data-value="23"></li>
-           </ol>
-       </li>
-       <li>3</li>
-    </ol>
+    <div src="ddd" class="ok" data-person-name="eric" id="t" key-name="kkk">
+        xxxxx
+        <div data-age="20">
+
+        </div>
+        ddddd
+    </div>
 </body>
 <script type="text/javascript" src="htmlToJson.js"></script>
 <script type="text/javascript">
-    //console.log(h2j($('#t')));
-    //console.log($('#t'));
-    var t = $('#t')[0];
-    for(var i =0;i < t.attributes.length;i++){
-        console.log(t.attributes[i].name)
-    }
+    //console.log($('#t').html(h2j.getKeyNameValue($('#t').html())));
+    //console.log(h2j.regAttrName('data-njj'));
+console.log(h2j.getJson($('#t')));
+//    var t = $('#t')[0];
+//    for(var i =0;i < t.attributes.length;i++){
+//        console.log(t.attributes[i].name)
+//    }
 </script>
 </html>
