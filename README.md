@@ -36,10 +36,7 @@
 ### img 键值对表示图片
 > 如：
 
-    img:{
-             src:"/1.jpg",
-        	 alt:"图片名称"
-    	}
+    img:"/1.jpg"
 
 >html
 
@@ -48,11 +45,7 @@
 ### video 键值对表示图片
 > json
 
-    video:{
-			src:"/movie.ogg",
-			controls:"controls",
-			error:"您的浏览器不支持 video 标签。"
-		  }
+    video:"/movie.ogg"
 
 >html
 
