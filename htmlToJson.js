@@ -30,7 +30,7 @@ var h2j = {
                 var $e = $(e);
                 var value = $e.children();
                 if (value.length === 1) {
-                    o[i] = this.getJson(value);
+                    o[i] = myThis.getJson(value);
                 } else {
                     o[i] = $e.attr('data-value') || $e.text();//有 data-value 就忽略 text
                 }
@@ -73,7 +73,11 @@ var h2j = {
             });
             var keyName = $dom.attr('key-name');
             if (keyName) {
-                o[keyName] = this.getKeyNameValue($dom.html());
+                if ($child.length !== 0) {
+                    o[keyName] = this.getKeyNameValue($dom.html());
+                } else {
+                    o[keyName] = $dom.text();
+                }
             }
         }
         return o;
