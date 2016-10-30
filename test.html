@@ -7,77 +7,59 @@
 </head>
 <body>
 
-<img src='/1.jpg' alt="图片名称"/>
+<img model="img-logo" src='https://www.baidu.com/img/baidu_jgylogo3.gif' alt="图片名称"/>
 
+<ol model="news-list">
+    <li>
+        <a href="/">
+            <div key-name="title">新闻</div>
+            <div key-name="description">新闻内容</div>
+            <div key-name="count">58</div>
+        </a>
+    </li>
+    <li>
+        <a href="/" data-count="58">
+            <div key-name="title">新闻</div>
+            <div key-name="description">新闻内容</div>
+        </a>
+    </li>
+</ol>
 
-<a href="/1.html">
-    <div key-name="title">新闻</div>
-    <div key-name="description">新闻内容</div>
-    <div key-name="count">58</div>
-</a>
-
-<a href="/1.html" data-count="58">
-    <div key-name="title">新闻</div>
-    <div key-name="description">新闻内容</div>
-</a>
-
-<div  >
+<div model="user-info">
     <div key-name="name">eric</div>
     <div key-name="age">20</div>
     <div key-name="interest">
         <ol>
-            <li>你好</li>
-            <li>谢谢</li>
-            <li>再见</li>
+            <li>DOTA</li>
+            <li>LOL</li>
+            <li>王者荣耀</li>
         </ol>
     </div>
 </div>
-
-<div>
-    <div key-name="name">eric</div>
-    <div key-name="age">20</div>
-    <div key-name="interest">
-        <div>
-            <div key-name="name">eric</div>
-            <div key-name="age">20</div>
-        </div>
-    </div>
-</div>
-
-<ol>
-    <li>
-        <div>
-            <div key-name="name">eric</div>
-            <div key-name="age">20</div>
-        </div>
-    </li>
-    <li>
-        <div data-name="bob" key-name="age">20</div>
-    </li>
-</ol>
-<ol id="t">
-    <li>
-        <ol>
-            <li>lol</li>
-            <li>dota</li>
-        </ol>
-    </li>
-    <li>
-        <ol>
-            <li>eric</li>
-            <li>bob</li>
-        </ol>
-    </li>
-</ol>
 </body>
 <script type="text/javascript" src="htmlToJson.js"></script>
 <script type="text/javascript">
-    //console.log($('#t').html(h2j.getKeyNameValue($('#t').html())));
-    //console.log(h2j.regAttrName('data-njj'));
-console.log(h2j.getJson($('#t')));
-//    var t = $('#t')[0];
-//    for(var i =0;i < t.attributes.length;i++){
-//        console.log(t.attributes[i].name)
-//    }
+    var imgLogo = function (o) {
+        return $('<img src="' + o.img + '"/>');
+    };
+
+    var newsList = function (o) {
+        return $('<div>就只有' + o.length + '条新闻啊！！</div>');
+    };
+
+    var newsList2 = function (o) {
+        var $h = $('<ol></ol>');
+        $.each(o, function (i, e) {
+            $h.append('<li><a href="' + e.link + '">' + e.title + '</a> <span>点击数：' + e.count + '</span><div>' + e.description + '</div></div></li>')
+        });
+        return $h;
+    };
+
+    var userInfo = function (o) {
+        return $('<div>有个叫' + o.name + '的，今年' + o.age + '岁。他对' + o.interest.join('、') + '比较感兴趣。</div>')
+    };
+    h2j.rendering(['imgLogo', ['newsList2','news-list'], 'userInfo'], function (modelHtml) {
+        $('body').append(modelHtml.imgLogo).append(modelHtml.newsList).append(modelHtml.userInfo);
+    })
 </script>
 </html>
